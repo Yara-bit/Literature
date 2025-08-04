@@ -1,4 +1,4 @@
-# Literature: A Public Collection of Papers on Airport Stand Assignment
+# Literature: A Public Collection of Papers on Airport Stand/Gate Assignment
 
 ## Aviation ground dispatch and gate allocation optimization
 
