@@ -22,6 +22,82 @@
 
 ---
 
+## Literature Review: DRL for Airport Gate Assignment
+
+### 1. Zhu et al. (2024)
+**Title**: Gate Assignment Algorithm for Airport Peak Time Based on Reinforcement Learning  
+- [Gate Assignment Algorithm for Airport Peak Time Based on Reinforcement Learning—Chenwei Zhu, Zhenchun Wei, Zengwei Lyu, Xiaohui Yuan, Dawei Hang, Lin Feng, 2024. (n.d.). Retrieved August 18, 2025, from]_(https://journals.sagepub.com/doi/abs/10.1177/03611981241242352)
+**Approach**:  
+- Proposes a two-stage PPO-based model (GABPPO) with pre-assignment and dynamic reassignment.
+- Optimizes near-gate usage and passenger transfer efficiency.
+
+**Results**:  
+- Higher near-gate assignment rate (76.6%) and better gate matching than DQN/PG/APGA.
+
+**Strengths**:  
+- Joint optimization of airport and passenger objectives.
+- Real-time reassignment included.
+
+**Limitations**:  
+- Small dataset (30 flights).
+- No scalability or runtime analysis.
+- Lacks comparison with stronger DRL baselines.
+
+---
+
+### 2. Li et al. (2025)
+**Title**: Deep Reinforcement Learning for Real-Time Airport Gate Assignment  
+- [Li, H., Wu, X., Ribeiro, M., Santos, B., & Zheng, P. (2025). Deep reinforcement learning approach for real-time airport gate assignment. Operations Research Perspectives, 14, 100338.] _(https://doi.org/10.1016/j.orp.2025.100338)
+**Approach**:  
+- Uses A3C for pre-assignment and a real-time reassignment agent (REGAPS).
+- Action masking applied for feasibility filtering.
+
+**Results**:  
+- Reduces apron usage and passenger walking distance vs. rule-based baselines.
+- Handles delayed flights adaptively.
+
+**Strengths**:  
+- Real-world dataset (124 flights).
+- Handles dynamic delays and gate-sharing constraints.
+
+**Limitations**:  
+- Simplifies gate occupation logic (e.g., dep delay ignored).
+- No evaluation against other DRL agents like PPO or DQN.
+
+---
+
+### 3. Jia et al. (2025)
+**Title**: A Deep Reinforcement Learning Algorithm for AGAP  
+- [Jia, A., Liu, H., Yang, H., Yang, W., Chen, H., & Yi, X. (2026). A Deep Reinforcement Learning Algorithm for Solving Airport Gate Allocation Problem. In M. Mahmud, M. Doborjeh, K. Wong, A. C. S. Leung, Z. Doborjeh, & M. Tanveer (Eds.), Neural Information Processing (pp. 75–88). Springer Nature.]_(https://doi.org/10.1007/978-981-96-6951-6_6)
+**Approach**:  
+- DQN-based assignment with hybrid rewards and conflict masking.
+- Evaluated on both synthetic benchmarks and large real-world cases.
+
+**Results**:  
+- Solves 244-seat/102-gate cases in <2s.
+- Outperforms FBS and RFH in quality and runtime.
+
+**Strengths**:  
+- High scalability.
+- Considers transfer vs. non-transfer passenger walking distance.
+
+**Limitations**:  
+- Focused on static schedules.
+- No dynamic reassignment or delay modeling.
+
+---
+
+###  Summary Table
+
+| Paper             | DRL Model | Reassignment | Real Data | Delays | Large-scale |
+|------------------|-----------|--------------|-----------|--------|-------------|
+| Zhu et al. (2024)| PPO       | ✅           | ✅ (30)    | ⚠️     | ❌          |
+| Li et al. (2025) | A3C       | ✅           | ✅ (124)   | ✅     | ❌          |
+| Jia et al. (2025)| DQN       | ❌           | ✅ (244)   | ❌     | ✅          |
+
+---
+
+
 ## Graph Neural Networks and Robot Learning
 
 - [A Comprehensive Survey on Graph Neural Networks](https://ieeexplore.ieee.org/abstract/document/9046288)  
